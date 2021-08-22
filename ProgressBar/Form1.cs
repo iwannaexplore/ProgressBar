@@ -16,7 +16,8 @@ namespace ProgressBar
         public Form1()
         {
             InitializeComponent();
-            ReadFromFile();
+            ReadValuesFromFile();
+            ReadHistoryFromFile();
         }
         private double  Calculate()
         {
@@ -25,14 +26,16 @@ namespace ProgressBar
 
             double result = readyTime / neededTime * 100;
             progressBar1.Value = (int)Math.Round(result);
-            label3.Text = $"{Math.Round(result)}%";
+            resultLabel.Text = $"{Math.Round(result)}%";
             return result;
         }
         private void GetResult(object sender, EventArgs e)
         {
             var result = Calculate();
-            //label3.Text =$"{result}%";
-            SaveIntoFile(neadedBox.Text, readyBox.Text, Subject.Text);
+            //resultLabel.Text =$"{result}%";
+            SaveValuesIntoFile(neadedBox.Text, readyBox.Text, Subject.Text);
+            SaveHistoryIntoFile();
+            ReadHistoryFromFile();
         }
         private double ReturnTimeFromString(string text)
         {
@@ -56,7 +59,7 @@ namespace ProgressBar
             var numbers = elements.Select(elem => double.Parse(elem)).ToArray();
             return (numbers[0], numbers[1]);
         }
-        private void SaveIntoFile(string value1, string value2, string subject)
+        private void SaveValuesIntoFile(string value1, string value2, string subject)
         {
             using (StreamWriter writer = new StreamWriter("save.txt"))
             {
@@ -65,7 +68,16 @@ namespace ProgressBar
             }
             
         }
-        private void ReadFromFile()
+        private void SaveHistoryIntoFile()
+        {
+            using (StreamWriter writer = new StreamWriter("history.txt", true))
+            {
+                var stringToSave = $"{Subject.Text} - {DateTime.Now.ToShortDateString()} - {readyBox.Text}/{neadedBox.Text} - {resultLabel.Text}";
+                writer.WriteLine(stringToSave);
+            }
+
+        }
+        private void ReadValuesFromFile()
         {
             using (StreamReader reader = new StreamReader("save.txt"))
             {
@@ -75,6 +87,16 @@ namespace ProgressBar
                 readyBox.Text = values[1];
                 Subject.Text = values[2];
                 Calculate();
+            }
+
+        }
+        private void ReadHistoryFromFile()
+        {
+
+            using (StreamReader reader = new StreamReader("history.txt"))
+            {
+                var result = reader.ReadToEnd();
+                history.Text = result;
             }
 
         }

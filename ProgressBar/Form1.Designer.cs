@@ -32,12 +32,12 @@ namespace ProgressBar
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.resultLabel = new System.Windows.Forms.Label();
             this.readyBox = new System.Windows.Forms.TextBox();
             this.neadedBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Subject = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.history = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -66,15 +66,15 @@ namespace ProgressBar
             this.label2.TabIndex = 2;
             this.label2.Text = "Надо";
             // 
-            // label3
+            // resultLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(96, 109);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 32);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "0%";
+            this.resultLabel.AutoSize = true;
+            this.resultLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.resultLabel.Location = new System.Drawing.Point(96, 109);
+            this.resultLabel.Name = "resultLabel";
+            this.resultLabel.Size = new System.Drawing.Size(50, 32);
+            this.resultLabel.TabIndex = 3;
+            this.resultLabel.Text = "0%";
             // 
             // readyBox
             // 
@@ -111,13 +111,13 @@ namespace ProgressBar
             this.Subject.Text = "Предмет";
             this.Subject.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // richTextBox1
+            // history
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(4, 165);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(235, 170);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "C# Pro - 10.05.2000 - 14/305 - 35%";
+            this.history.Location = new System.Drawing.Point(4, 165);
+            this.history.Name = "history";
+            this.history.Size = new System.Drawing.Size(235, 170);
+            this.history.TabIndex = 8;
+            this.history.Text = "C# Pro - 10.05.2000 - 14/305 - 35%";
             // 
             // label4
             // 
@@ -135,12 +135,12 @@ namespace ProgressBar
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(249, 347);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.history);
             this.Controls.Add(this.Subject);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.neadedBox);
             this.Controls.Add(this.readyBox);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar1);
@@ -157,12 +157,12 @@ namespace ProgressBar
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label resultLabel;
         private System.Windows.Forms.TextBox readyBox;
         private System.Windows.Forms.TextBox neadedBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox Subject;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox history;
         private System.Windows.Forms.Label label4;
     }
 }
