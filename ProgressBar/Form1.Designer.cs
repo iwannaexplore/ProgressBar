@@ -39,19 +39,20 @@ namespace ProgressBar
             this.Subject = new System.Windows.Forms.TextBox();
             this.history = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(4, 86);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(235, 20);
+            this.progressBar1.Size = new System.Drawing.Size(309, 20);
             this.progressBar1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 28);
+            this.label1.Location = new System.Drawing.Point(69, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 1;
@@ -60,7 +61,7 @@ namespace ProgressBar
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(112, 27);
+            this.label2.Location = new System.Drawing.Point(158, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 2;
@@ -70,29 +71,29 @@ namespace ProgressBar
             // 
             this.resultLabel.AutoSize = true;
             this.resultLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.resultLabel.Location = new System.Drawing.Point(96, 109);
+            this.resultLabel.Location = new System.Drawing.Point(142, 109);
             this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(50, 32);
+            this.resultLabel.Size = new System.Drawing.Size(49, 32);
             this.resultLabel.TabIndex = 3;
             this.resultLabel.Text = "0%";
             // 
             // readyBox
             // 
-            this.readyBox.Location = new System.Drawing.Point(11, 43);
+            this.readyBox.Location = new System.Drawing.Point(57, 50);
             this.readyBox.Name = "readyBox";
             this.readyBox.Size = new System.Drawing.Size(75, 20);
             this.readyBox.TabIndex = 4;
             // 
             // neadedBox
             // 
-            this.neadedBox.Location = new System.Drawing.Point(92, 43);
+            this.neadedBox.Location = new System.Drawing.Point(138, 50);
             this.neadedBox.Name = "neadedBox";
             this.neadedBox.Size = new System.Drawing.Size(75, 20);
             this.neadedBox.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(173, 43);
+            this.button1.Location = new System.Drawing.Point(219, 50);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(59, 23);
             this.button1.TabIndex = 6;
@@ -104,7 +105,7 @@ namespace ProgressBar
             // 
             this.Subject.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Subject.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Subject.Location = new System.Drawing.Point(38, 1);
+            this.Subject.Location = new System.Drawing.Point(84, 8);
             this.Subject.Name = "Subject";
             this.Subject.Size = new System.Drawing.Size(157, 23);
             this.Subject.TabIndex = 7;
@@ -115,25 +116,37 @@ namespace ProgressBar
             // 
             this.history.Location = new System.Drawing.Point(4, 165);
             this.history.Name = "history";
-            this.history.Size = new System.Drawing.Size(235, 170);
+            this.history.Size = new System.Drawing.Size(309, 170);
             this.history.TabIndex = 8;
             this.history.Text = "C# Pro - 10.05.2000 - 14/305 - 35%";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(99, 149);
+            this.label4.Location = new System.Drawing.Point(145, 149);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "История";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(4, 109);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(58, 17);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "Revert";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(249, 347);
+            this.ClientSize = new System.Drawing.Size(325, 355);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.history);
             this.Controls.Add(this.Subject);
@@ -164,6 +177,7 @@ namespace ProgressBar
         private System.Windows.Forms.TextBox Subject;
         private System.Windows.Forms.RichTextBox history;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
