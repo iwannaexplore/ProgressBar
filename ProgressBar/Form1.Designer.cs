@@ -105,9 +105,9 @@ namespace ProgressBar
             // 
             this.Subject.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Subject.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Subject.Location = new System.Drawing.Point(84, 8);
+            this.Subject.Location = new System.Drawing.Point(12, 8);
             this.Subject.Name = "Subject";
-            this.Subject.Size = new System.Drawing.Size(157, 23);
+            this.Subject.Size = new System.Drawing.Size(301, 23);
             this.Subject.TabIndex = 7;
             this.Subject.Text = "Предмет";
             this.Subject.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
