@@ -31,7 +31,7 @@ namespace ProgressBar
         {
             var result = Calculate();
             //resultLabel.Text =$"{result}%";
-            SaveValuesIntoFile(neadedBox.Text, readyBox.Text, Subject.Text);
+            SaveValuesIntoFile(neadedBox.Text, readyBox.Text, checkBox1.Checked, Subject.Text);
             SaveHistoryIntoFile();
             ReadHistoryFromFile();
         }
@@ -63,11 +63,11 @@ namespace ProgressBar
             return (numbers[0], numbers[1]);
         }
 
-        private void SaveValuesIntoFile(string value1, string value2, string subject)
+        private void SaveValuesIntoFile(string value1, string value2, bool isRevert, string subject)
         {
             using (var writer = new StreamWriter("save.txt"))
             {
-                var stringToSave = $"{value1},{value2},{subject}";
+                var stringToSave = $"{value1},{value2},{subject},{isRevert}";
                 writer.WriteLine(stringToSave);
             }
         }
@@ -91,6 +91,7 @@ namespace ProgressBar
                 neadedBox.Text = values[0];
                 readyBox.Text = values[1];
                 Subject.Text = values[2];
+                checkBox1.Checked = bool.Parse(values[3]);
                 Calculate();
             }
         }
